@@ -1,6 +1,26 @@
-- clean: ['~']
+- defaults:
+    link:
+        create: true
+        relink: true
 
+- clean: ['~', '~/.config']
+
+- shell:
+    # Install submodules
+    - [git submodule update --init --recursive, Installing submodules]
+
+    # Install zsh plugins with Antibody
+    - [antibody bundle < ~/.dotfiles/zsh/plugins.txt > ~/.zsh_plugins.sh]
+    - [antibody update]
+    
 - link:
-    ~/.zshrc: zshrc
 
+    # zsh
+    ~/.zshrc: zsh/zshrc.zsh
+
+    # nvim
+    ~/.config/nvim: nvim
+
+    # Git
+    ~/.gitconfig: git/gitconfig
 
