@@ -27,6 +27,10 @@ Plug 'haya14busa/incsearch.vim' " Improved incremental searching.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed.
 Plug 'thinca/vim-quickrun' " Run commands quickly.
 
+"Swift
+Plug 'keith/swift.vim' " Git wrapper.
+
+
 " Git
 Plug 'tpope/vim-fugitive' " Git wrapper.
 Plug 'mhinz/vim-signify' " Show a diff using Vim its sign column.

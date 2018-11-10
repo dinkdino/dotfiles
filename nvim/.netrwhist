@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/nux/.dotfiles/zsh'
+let g:netrw_dirhist_2='/Users/nux/.dotfiles/zsh/functions'
+let g:netrw_dirhist_3='/Users/nux/Projects/SIA/Code/Repos/msl-starling-ios-panasonic/KrisWorld/KrisWorld'
+let g:netrw_dirhist_4='/Users/nux'
+let g:netrw_dirhist_5='/Users/nux/.dotfiles/nvim'

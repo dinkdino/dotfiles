@@ -1,3 +1,16 @@
+
+function git_current_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
+
 # Update readme commit
 gz(){
   git add README.md
@@ -105,6 +118,15 @@ ggs() {
 # Write quick commit message. gc <commit-msg>
 gc() {
     git commit -m "$*"
+}
+
+ggp() {
+  if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]; then
+    git push origin "${*}"
+  else
+    [[ "$#" == 0 ]] && local b="$(git_current_branch)"
+    git push origin "${b:=$1}"
+  fi
 }
 
 # cd to root of .git project

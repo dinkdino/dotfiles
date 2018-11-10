@@ -24,3 +24,5 @@
     # Git
     ~/.gitconfig: git/gitconfig
 
+    # xvim
+    ~/.xvimrc: xvimrc
