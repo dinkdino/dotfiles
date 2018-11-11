@@ -26,3 +26,6 @@
 
     # xvim
     ~/.xvimrc: xvimrc
+
+    # tmux
+    ~/.tmux.conf: tmux.conf
