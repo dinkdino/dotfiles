@@ -11,3 +11,7 @@ source ~/.dotfiles/zsh/alias.zsh
 source ~/.dotfiles/zsh/misc.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ~/.nix-profile/etc/profile.d/nix.sh
+
+
