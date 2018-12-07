@@ -346,3 +346,16 @@ autocmd VimLeave * set guicursor=a:ver25-blinkon25 " Make cursor block when leav
 set signcolumn=yes
 nnoremap <C-q> :q<cr>:q<cr>
 set foldcolumn=0 " Remove sidebar column
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
