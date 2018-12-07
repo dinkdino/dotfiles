@@ -18,7 +18,6 @@ setopt inc_append_history # Immediately append to the history file, not just whe
 setopt extended_glob # Use extended globbing syntax
 setopt auto_cd # Auto change to a dir without typing cd
 
-eval "$(hub alias -s)" # git -> hub
 eval "$(direnv hook zsh)" # Direnv
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # FZF fuzzy search

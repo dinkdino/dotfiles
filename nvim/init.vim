@@ -22,7 +22,6 @@ Plug 'tpope/vim-surround' " Quoting/parenthesizing made simple.
 Plug 'junegunn/vim-easy-align' " Simple, easy-to-use alignment.
 Plug '/usr/local/opt/fzf' " Fzf search.
 Plug 'junegunn/fzf.vim' " Fzf search.
-Plug 'wakatime/vim-wakatime' " Automatic time tracking.
 Plug 'haya14busa/incsearch.vim' " Improved incremental searching.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed.
 Plug 'thinca/vim-quickrun' " Run commands quickly.
