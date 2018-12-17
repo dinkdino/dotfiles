@@ -28,6 +28,7 @@ Plug 'thinca/vim-quickrun' " Run commands quickly.
 
 "Swift
 Plug 'keith/swift.vim' " Git wrapper.
+Plug 'jvirtanen/vim-cocoapods'
 
 
 " Git
@@ -55,6 +56,10 @@ Plug 'Shougo/neco-vim', { 'for': 'vim' } " Vim source for neocomplete/deoplete.
 
 " Nix
 Plug 'LnL7/vim-nix', { 'for': 'nix' } " Vim configuration files for Nix.
+
+"Ruby
+Plug 'vim-ruby/vim-ruby'
+
 call plug#end()
 
 " Options

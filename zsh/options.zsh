@@ -2,6 +2,10 @@
 autoload -Uz compinit && compinit # TODO: ?
 # Matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+compdef w=-redirect-,-default-,-default- # Gives w <tab> autocomplete
+#zstyle ':completion:*' insert-tab false
+
+IFS=$' \n\t'
 
 # History
 HISTSIZE=10000 # Lines of history to keep in memory for current session
@@ -18,6 +22,11 @@ setopt inc_append_history # Immediately append to the history file, not just whe
 setopt extended_glob # Use extended globbing syntax
 setopt auto_cd # Auto change to a dir without typing cd
 
+#eval "$(git-hub alias -s)" # git -> hub. TODO: make it work with nix installed git-hub!
 eval "$(direnv hook zsh)" # Direnv
 
+export DIRENV_LOG_FORMAT= # Remove logs from direnv
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # FZF fuzzy search
+
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi

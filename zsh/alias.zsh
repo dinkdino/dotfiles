@@ -391,5 +391,7 @@ alias gdn='git diff --name-only'
 alias gs='git status --short'
 alias gss='git show --word-diff=color' # See changes made
 
-# Projects
-alias krisworld='cd ~/Projects/SIA/Code/Repos/msl-starling-ios-panasonic'
+# Bundle
+alias be='bundle exec'
+alias bepi='bundle exec pod install'
+alias pru='pod repo update'
