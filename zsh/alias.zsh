@@ -394,4 +394,7 @@ alias gss='git show --word-diff=color' # See changes made
 # Bundle
 alias be='bundle exec'
 alias bepi='bundle exec pod install'
+alias bepu='bundle exec pod update'
 alias pru='pod repo update'
+
+alias gdc='git duet-commit -m'
