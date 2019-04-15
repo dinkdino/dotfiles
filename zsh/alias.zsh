@@ -246,11 +246,10 @@ alias ew='nvim ~/.dotfiles/nvim/init.vim' # nvimrc
 alias essh='nvim ~/.ssh/config' # ssh config
 
 # cd places
-alias dw='cd ~/src/web'
+alias dw='cd ~/workspace'
 alias dsh='cd ~/.ssh'
 alias dn='cd ~/src/clones'
 alias di='cd ~/src/ideas'
-alias dl='cd ~/src/learn'
 alias dt='cd ~/src/test'
 alias dm='cd ~/src/games'
 alias da='cd ~/src/'
@@ -258,7 +257,7 @@ alias dla='cd ~/src/orgs/learn-anything'
 alias dz='cd ~/.dotfiles'
 alias dk='cd ~/Documents'
 alias de='cd ~/Desktop'
-alias dq='cd ~/Downloads'
+alias dl='cd ~/Downloads'
 alias dls='cd ~/Library/Services'
 alias drp='cd ~/Dropbox'
 
@@ -372,6 +371,7 @@ alias gtv='git tag | sort -V'
 alias gunignore='git update-index --no-assume-unchanged'
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
 alias gup='git pull --rebase'
+alias gups='git pull --rebase --autostash'
 alias gupv='git pull --rebase -v'
 alias glum='git pull upstream master'
 
@@ -389,12 +389,18 @@ alias gdn='git diff --name-only'
 
 # Git Status
 alias gs='git status --short'
-alias gss='git show --word-diff=color' # See changes made
+alias gstd='git show --word-diff=color' # See changes made
 
 # Bundle
 alias be='bundle exec'
+alias befl='bundle exec fastlane'
 alias bepi='bundle exec pod install'
 alias bepu='bundle exec pod update'
 alias pru='pod repo update'
+alias pss='pod search'
 
 alias gdc='git duet-commit -m'
+alias gdc!='git duet-commit --amend'
+alias gdcn!='git duet-commit --amend --no-edit'
+
+alias gapa='git add --patch'

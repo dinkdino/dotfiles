@@ -219,8 +219,8 @@ nmap <Leader>ze   :enew <CR>
 nmap <Leader>zt   :tabnew<CR>
 
 " Space p
-nnoremap <Leader>pi :PlugInstall<CR>
-nnoremap <Leader>pu :PlugUpdate<CR>
+"nnoremap <Leader>pi :PlugInstall<CR>
+"nnoremap <Leader>pu :PlugUpdate<CR>
 
 " Space w
 " Save
@@ -279,12 +279,12 @@ nnoremap <Leader>tv :vsplit <Bar> term.
 " Buffer control
 nmap <Leader>s    :bprevious<CR>
 " Source vimrc
-nnoremap <Leader>ss :source ~/.dotfiles/nvim/init.vim<CR>
+"nnoremap <Leader>ss :source ~/.dotfiles/nvim/init.vim<CR>
 
 " Space n
 nmap <Leader>n    :bnext<CR>
 " Search lines with fzf
-nnoremap <silent> <Leader>n :Lines<CR>
+"nnoremap <silent> <Leader>n :Lines<CR>
 
 " Space q
 nmap <Leader>q    :q<CR>

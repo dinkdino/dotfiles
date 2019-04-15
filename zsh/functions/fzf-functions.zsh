@@ -157,6 +157,27 @@ fm() {
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
+fps() {
+    local modules module
+    modules=$(grep -E '^\s*(\w*):\s[[:alnum:]]{40}' Podfile.lock | cut -d':' -f1 | sed -e 's/^[[:space:]]*//')
+    module=$(echo "$modules" | fzf --tac +s +m -e --ansi --reverse) &&
+    pod search $(echo "$module")
+}
+
+
+fpu() {
+    local modules selected_modules
+    modules=$(grep -E '^\s*(\w*):\s[[:alnum:]]{40}' Podfile.lock | cut -d':' -f1 | sed -e 's/^[[:space:]]*//')
+    selected_modules=$(echo "$modules" | fzf --tac +s -m -e --ansi --reverse) 
+
+    for module in $selected_modules; do 
+        module = $(echo $module | tr -d '[:space:]')
+        new_version=$(pod search $module --simple | tr -d '[:space:]' | ggrep -Eo "(\()(.*)(\))" | tr -d '()')
+        sed -i "" -E "s/(.*$module.*)'(.*)'/\1'$new_version'/g" podfile
+    done
+    echo $selected_modules | xargs pod update 
+}
+
 fe() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
