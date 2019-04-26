@@ -497,3 +497,7 @@ ram() {
     fi
   fi
 }
+
+rmswap() {
+    rm ~/.local/share/nvim/swap/*
+}

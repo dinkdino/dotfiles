@@ -176,7 +176,8 @@ alias rrpdf='rm -rf *.pdf'
 alias sz='exec zsh'
 
 # ls
-alias l="ls -lah"
+alias l='colorls -lA --sd'
+#alias l="ls -lah"
 alias la="ls -aF"
 alias ld="ls -ld"
 alias lso='ls -At1 && echo "------Oldest--"'
@@ -336,7 +337,7 @@ alias gra='git remote add'
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
-alias grbi='git rebase -i'
+alias grbi='git rebase -i `fcs`'
 alias grbm='git rebase master'
 alias grbs='git rebase --skip'
 alias grh='git reset'

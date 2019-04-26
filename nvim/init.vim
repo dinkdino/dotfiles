@@ -25,11 +25,13 @@ Plug 'junegunn/fzf.vim' " Fzf search.
 Plug 'haya14busa/incsearch.vim' " Improved incremental searching.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed.
 Plug 'thinca/vim-quickrun' " Run commands quickly.
+Plug 'terryma/vim-multiple-cursors' " Multiple cursors
+Plug 'svermeulen/vim-yoink' " Yoink
+"Plug 'svermeulen/vim-cutlass' " Cutlass
 
 "Swift
 Plug 'keith/swift.vim' " Git wrapper.
 Plug 'jvirtanen/vim-cocoapods'
-
 
 " Git
 Plug 'tpope/vim-fugitive' " Git wrapper.
@@ -172,9 +174,10 @@ endfunction
 
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
+let g:multi_cursor_use_default_mapping=0
 
 let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutToggle = '<C-P>'
+"let g:AutoPairsShortcutToggle = '<C-P>'
 au filetype vim let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'", '`':'`'} " Don't autocomplete in vim
 
 " Vim session
@@ -366,3 +369,11 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 autocmd BufNewFile,BufRead Podfile,podfile,*.podspec set filetype=ruby
+
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+
