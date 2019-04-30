@@ -176,8 +176,8 @@ alias rrpdf='rm -rf *.pdf'
 alias sz='exec zsh'
 
 # ls
-alias l='colorls -lA --sd'
-#alias l="ls -lah"
+alias l='colorls -lA --sd --gs'
+alias ls='colorls'
 alias la="ls -aF"
 alias ld="ls -ld"
 alias lso='ls -At1 && echo "------Oldest--"'
