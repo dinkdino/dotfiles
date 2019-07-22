@@ -52,7 +52,7 @@
   programs.zsh.enableCompletion = false;
 
   programs.zsh.enable = true;
-  programs.zsh.promptInit = "";
+  programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel9k}/share/zsh-powerlevel9k/powerlevel9k.zsh-theme";
   nix.nixPath = [
     "darwin-config=$HOME/.dotfiles/nix/darwin.nix"
     "nixpkgs=$HOME/src/clones/nixpkgs"

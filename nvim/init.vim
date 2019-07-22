@@ -28,9 +28,13 @@ Plug 'thinca/vim-quickrun' " Run commands quickly.
 Plug 'terryma/vim-multiple-cursors' " Multiple cursors
 Plug 'svermeulen/vim-yoink' " Yoink
 "Plug 'svermeulen/vim-cutlass' " Cutlass
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+
 
 "Swift
-Plug 'keith/swift.vim' " Git wrapper.
+"Plug 'keith/swift.vim' " Git wrapper.
+Plug 'lilyball/vim-swift'
 Plug 'jvirtanen/vim-cocoapods'
 
 " Git
@@ -41,6 +45,8 @@ Plug 'airblade/vim-gitgutter' " Shows git diff in the gutter (sign column) and s
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') } " Asynchronous completion framework.
 Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
+Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript'
 
 " C
 Plug 'zchee/deoplete-clang', { 'for': 'c,cpp,objc' }
@@ -280,7 +286,7 @@ nnoremap <Leader>tv :vsplit <Bar> term.
 
 " Space s
 " Buffer control
-nmap <Leader>s    :bprevious<CR>
+nmap <Leader>p    :bprevious<CR>
 " Source vimrc
 "nnoremap <Leader>ss :source ~/.dotfiles/nvim/init.vim<CR>
 

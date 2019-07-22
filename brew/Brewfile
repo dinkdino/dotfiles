@@ -1,0 +1,32 @@
+
+cask_args appdir: "/Applications"
+tap "homebrew/cask"
+
+brew "neovim"
+brew "antibody"
+brew "tmux"
+brew "direnv"
+brew "exa"
+brew "fzf"
+brew "htop"
+brew "ranger"
+brew "httpie"
+brew "git"
+brew "go"
+brew "ripgrep"
+brew "the_silver_searcher"
+brew "sebglazebrook/aliases/aliases"
+brew "bat"
+brew "wget"
+brew "tree"
+
+brew "nvm"
+brew "pyenv"
+brew "rbenv"
+brew "pipenv"
+
+tap "sambadevi/powerlevel9k"
+brew "powerlevel9k"
+
+brew "git-extras"
+
