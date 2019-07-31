@@ -12,6 +12,9 @@
     # Install zsh plugins with Antibody
     - [antibody bundle < ~/.dotfiles/zsh/plugins.txt > ~/.zsh_plugins.sh]
     - [antibody update]
+
+- brewfile:
+    file: brew/Brewfile
     
 - link:
 
