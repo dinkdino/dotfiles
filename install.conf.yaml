@@ -29,3 +29,6 @@
 
     # tmux
     ~/.tmux.conf: tmux.conf
+
+    # ideavim
+    ~/.ideavimrc: ideavimrc
