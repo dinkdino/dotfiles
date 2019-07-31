@@ -12,8 +12,6 @@ source ~/.dotfiles/zsh/misc.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.nix-profile/etc/profile.d/nix.sh
-
 # 0 -- vanilla completion (abc => abc)
 # 1 -- smart case completion (abc => Abc)
 # 2 -- word flex completion (abc => A-big-Car)

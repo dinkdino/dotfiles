@@ -62,9 +62,6 @@ Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'} " Asynchronous Go complet
 " Vim
 Plug 'Shougo/neco-vim', { 'for': 'vim' } " Vim source for neocomplete/deoplete.
 
-" Nix
-Plug 'LnL7/vim-nix', { 'for': 'nix' } " Vim configuration files for Nix.
-
 "Ruby
 Plug 'vim-ruby/vim-ruby'
 

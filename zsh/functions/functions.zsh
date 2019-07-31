@@ -35,12 +35,6 @@ falias() {
     eval $CMD
 }
 
-unalias ni
-# Install Nix packages
-ni(){
-  nix-env -iA nixpkgs."$1"
-}
-
 # Open Xcode projects from the command line
 function co {
   proj=$(ls -d *.xcodeproj/ 2>/dev/null)

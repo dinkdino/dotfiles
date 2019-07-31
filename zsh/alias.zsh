@@ -2,19 +2,6 @@
 
 # TODO: clean it & use only what I need
 
-# Nix
-alias nr='nix repl'
-
-# Nix env
-alias n='nix-env'
-alias nq='nix-env -q | fzf | xargs -I{} nix-env -e {}' # Search installed packages to uninstall
-alias nQ='nix-env -q' # See installed packages
-alias nuu='nix-env -u' # Upgrade packages
-
-# Nix shell
-alias ns="nix-shell --run zsh"
-alias nss="nix-shell --run zsh -p"
-
 # General
 alias te='tree'
 alias op='open'
