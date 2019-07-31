@@ -1,5 +1,4 @@
 mafredri/zsh-async
-spwhitt/nix-zsh-completions
 rupa/z
 Tarrasch/zsh-bd
 zsh-users/zsh-completions
