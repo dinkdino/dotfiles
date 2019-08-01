@@ -46,7 +46,6 @@ Plug 'airblade/vim-gitgutter' " Shows git diff in the gutter (sign column) and s
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') } " Asynchronous completion framework.
 Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
 Plug 'mhartington/nvim-typescript'
-Plug 'mhartington/nvim-typescript'
 
 " C
 Plug 'zchee/deoplete-clang', { 'for': 'c,cpp,objc' }
