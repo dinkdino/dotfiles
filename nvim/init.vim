@@ -31,6 +31,8 @@ Plug 'svermeulen/vim-yoink' " Yoink
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 
 "Swift
 "Plug 'keith/swift.vim' " Git wrapper.

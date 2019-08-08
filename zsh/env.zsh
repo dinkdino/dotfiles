@@ -28,3 +28,8 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 typeset -U PATH # Remove duplicates in $PATH
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
