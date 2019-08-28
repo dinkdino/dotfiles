@@ -35,3 +35,6 @@
 
     # ideavim
     ~/.ideavimrc: ideavimrc
+
+    # emacs
+    ~/.emacs: emacs

@@ -35,6 +35,7 @@ brew "wget"
 brew "tree"
 brew "neovim"
 brew "kakoune"
+cask "emacs"
 
 tap "sambadevi/powerlevel9k"
 brew "powerlevel9k"

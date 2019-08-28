@@ -30,14 +30,20 @@ Plug 'svermeulen/vim-yoink' " Yoink
 "Plug 'svermeulen/vim-cutlass' " Cutlass
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
-
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'neomake/neomake'
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+Plug 'parsonsmatt/intero-neovim'
 
 
 "Swift
-"Plug 'keith/swift.vim' " Git wrapper.
+Plug 'keith/swift.vim' 
 Plug 'lilyball/vim-swift'
 Plug 'jvirtanen/vim-cocoapods'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 
 " Git
 Plug 'tpope/vim-fugitive' " Git wrapper.
@@ -48,6 +54,7 @@ Plug 'airblade/vim-gitgutter' " Shows git diff in the gutter (sign column) and s
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') } " Asynchronous completion framework.
 Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
 Plug 'mhartington/nvim-typescript'
+Plug 'landaire/deoplete-swift'
 
 " C
 Plug 'zchee/deoplete-clang', { 'for': 'c,cpp,objc' }
@@ -286,7 +293,7 @@ nnoremap <Leader>tv :vsplit <Bar> term.
 " Buffer control
 nmap <Leader>p    :bprevious<CR>
 " Source vimrc
-"nnoremap <Leader>ss :source ~/.dotfiles/nvim/init.vim<CR>
+nnoremap <Leader>ss :source ~/.dotfiles/nvim/init.vim<CR>
 
 " Space n
 nmap <Leader>n    :bnext<CR>
@@ -380,4 +387,63 @@ nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
 
+nmap <Leader>fr :tabe %:p:h<CR>
 
+
+" Haskell
+let g:haskell_classic_highlighting = 1
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_guard = 2
+let g:haskell_indent_case_alternative = 1
+let g:cabal_indent_section = 2
+
+" Automatically reload on save
+au BufWritePost *.hs InteroReload
+
+" Lookup the type of expression under the cursor
+au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
+au FileType haskell nmap <silent> <leader>T <Plug>InteroType
+" Insert type declaration
+au FileType haskell nnoremap <silent> <leader>ni :InteroTypeInsert<CR>
+" Show info about expression or type under the cursor
+au FileType haskell nnoremap <silent> <leader>i :InteroInfo<CR>
+
+" Open/Close the Intero terminal window
+au FileType haskell nnoremap <silent> <leader>nn :InteroOpen<CR>
+au FileType haskell nnoremap <silent> <leader>nh :InteroHide<CR>
+
+" Reload the current file into REPL
+au FileType haskell nnoremap <silent> <leader>nf :InteroLoadCurrentFile<CR>
+" Jump to the definition of an identifier
+au FileType haskell nnoremap <silent> <leader>ng :InteroGoToDef<CR>
+" Evaluate an expression in REPL
+au FileType haskell nnoremap <silent> <leader>ne :InteroEval<CR>
+
+" Start/Stop Intero
+au FileType haskell nnoremap <silent> <leader>ns :InteroStart<CR>
+au FileType haskell nnoremap <silent> <leader>nk :InteroKill<CR>
+
+" Reboot Intero, for when dependencies are added
+au FileType haskell nnoremap <silent> <leader>nr :InteroKill<CR> :InteroOpen<CR>
+
+" Managing targets
+" Prompts you to enter targets (no silent):
+au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR><Paste>
+
+" SourceKit-LSP configuration
+if executable('sourcekit-lsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'sourcekit-lsp',
+        \ 'cmd': {server_info->['sourcekit-lsp']},
+        \ 'whitelist': ['swift'],
+        \ })
+endif
+
+autocmd FileType swift setlocal omnifunc=lsp#complete

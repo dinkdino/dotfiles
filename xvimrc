@@ -24,3 +24,5 @@ nmap <space>d :xcmenucmd Quick Help for Selected Item<CR>
 nmap <space>h :xccmd toggleNavigatorsVisibility<CR>
 nmap <space>j :xccmd toggleDebuggerVisibility<CR>
 nmap <space>k ^
+
+nmap <space>ff :xcmenucmd Reveal in Project Navigator<CR>
