@@ -38,3 +38,9 @@
 
     # emacs
     ~/.emacs: emacs
+
+    # yabai
+    ~/.yabairc: yabairc
+
+    # skhd
+    ~/.skhdrc: skhdrc
