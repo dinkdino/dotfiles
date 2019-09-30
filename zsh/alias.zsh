@@ -392,3 +392,4 @@ alias gdc!='git duet-commit --amend'
 alias gdcn!='git duet-commit --amend --no-edit'
 
 alias gapa='git add --patch'
+alias grbi='git rebase -i `fcs`'

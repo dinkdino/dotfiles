@@ -23,6 +23,8 @@ nmap <space>d :xcmenucmd Quick Help for Selected Item<CR>
 " Toggle Toolbars
 nmap <space>h :xccmd toggleNavigatorsVisibility<CR>
 nmap <space>j :xccmd toggleDebuggerVisibility<CR>
-nmap <space>k ^
+nmap <space>l :xcmenucmd Hide Inspectors<CR>
+nmap <space>l :xcmenucmd Show Inspectors<CR>
 
-nmap <space>ff :xcmenucmd Reveal in Project Navigator<CR>
+nmap <space>b :xcmenucmd Build<CR>
+nmap <space>c :xcmenucmd Clean Build Folder<CR>
