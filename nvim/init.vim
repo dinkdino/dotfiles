@@ -32,11 +32,23 @@ Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'neomake/neomake'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+
+Plug 'vim-scripts/DrawIt'
+Plug 'liuchengxu/space-vim-theme'
+Plug 'morhetz/gruvbox'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 Plug 'parsonsmatt/intero-neovim'
 
+" Rust
+Plug 'rust-lang/rust.vim'
 
 "Swift
 Plug 'keith/swift.vim' 
@@ -163,7 +175,7 @@ let g:incsearch#auto_nohlsearch = 1 " TODO
 
 " Theme
 set background=dark " Set night mode
-let ayucolor="mirage"
+let ayucolor="dark"
 colorscheme ayu
 
 " Bufferline
@@ -447,3 +459,26 @@ if executable('sourcekit-lsp')
 endif
 
 autocmd FileType swift setlocal omnifunc=lsp#complete
+
+" Rust
+" -------- RLS configuration {{{
+" See https://github.com/autozimu/LanguageClient-neovim
+"
+" \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
+
+" Don't show inline errors. See:
+" https://github.com/autozimu/LanguageClient-neovim/issues/719
+let g:LanguageClient_useVirtualText=0
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> <leader>c :call LanguageClient#textDocument_codeAction()<CR>
+nnoremap <silent> <leader>e :call LanguageClient#explainErrorAtPoint()<CR>
+" }}}
