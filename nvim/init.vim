@@ -33,6 +33,7 @@ Plug 'mattn/emmet-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'neomake/neomake'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'Shougo/defx.nvim'
 
 Plug 'vim-scripts/DrawIt'
 Plug 'liuchengxu/space-vim-theme'
@@ -55,7 +56,6 @@ Plug 'keith/swift.vim'
 Plug 'lilyball/vim-swift'
 Plug 'jvirtanen/vim-cocoapods'
 Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 
 " Git
 Plug 'tpope/vim-fugitive' " Git wrapper.
@@ -482,3 +482,5 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> <leader>c :call LanguageClient#textDocument_codeAction()<CR>
 nnoremap <silent> <leader>e :call LanguageClient#explainErrorAtPoint()<CR>
 " }}}
+
+runtime! partials/defx.vim
