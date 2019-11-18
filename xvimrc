@@ -6,9 +6,12 @@ nnoremap <C-a>k <C-w>k
 nnoremap <C-a>h <C-w>h
 nnoremap <C-a>l <C-w>l
 
-nnoremap <C-a>- <C-w>s
-nnoremap <C-a>_ <C-w>v
-nnoremap <C-a>x <C-w>c
+nnoremap <C-a>_ :xcmenucmd Editor<CR>
+nnoremap <C-a>_ :xcmenucmd Editor On Right<CR>
+nnoremap <C-a>- :xcmenucmd Editor Below<CR>
+nnoremap <C-a>x :xcmenucmd Close Editor<CR>
+nnoremap <C-a>z :xcmenucmd Focus<CR>
+nnoremap <C-a>r :xcmenucmd Change Editor Orientation<CR>
 
 nmap <space>f :xcmenucmd Open Quickly...<CR>
 nmap <space>n :nissue<CR>
@@ -27,4 +30,5 @@ nmap <space>l :xcmenucmd Hide Inspectors<CR>
 nmap <space>l :xcmenucmd Show Inspectors<CR>
 
 nmap <space>b :xcmenucmd Build<CR>
-nmap <space>c :xcmenucmd Clean Build Folder<CR>
+nmap <space>c :%s/^ +$//g<CR> 
+

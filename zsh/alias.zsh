@@ -335,7 +335,7 @@ alias grset='git remote set-url'
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 alias gru='git reset --'
 alias grup='git remote update'
-alias grv='git remote -v'
+alias grvv='git remote -v'
 
 alias gsb='git status -sb'
 alias gsd='git svn dcommit'
@@ -393,3 +393,4 @@ alias gdcn!='git duet-commit --amend --no-edit'
 
 alias gapa='git add --patch'
 alias grbi='git rebase -i `fcs`'
+alias grv='grv'

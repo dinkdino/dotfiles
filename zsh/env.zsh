@@ -33,4 +33,6 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export PATH="$PATH:$HOME/workspace/stuff/sourcekit-lsp/.build/debug"
+export PATH="$PATH:$HOME/code/stuff/sourcekit-lsp/.build/debug"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+

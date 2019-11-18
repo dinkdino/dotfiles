@@ -140,67 +140,12 @@ g.() {
   fi
 }
 
-# Create MIT license file for Nikita Voloboev
-mit() {
-  license-up mit Nikita Voloboev nikitavoloboev.xyz
-  git add LICENCE
-}
-
-# Create MIT license file for Learn Anything
-mitla () {
-  license-up mit Learn Anything, learn-anything.xyz
-  git add LICENCE
-}
-
-# TODO: not sure
-# Pull changes made from PR to head. gp <link>
-gp() {
-    git pull origin pull/"$1"/head
-}
 
 # Create dir, go to it and initialise it with git. mg <dir-name>
 mg() {
     mkdir "$1"
     cd "$1"
     git init
-}
-
-# git push to origin master of currently open Safari tab
-ggu() {
-    git remote add origin $(osascript -e 'tell application "Safari" to return URL of front document')
-    git push -u origin master
-}
-
-# git add origin from currently open Safari tab and push to master there
-ggo() {
-    git remote add origin $(osascript -e 'tell application "Safari" to return URL of front document')
-    git push $(osascript -e 'tell application "Safari" to return URL of front document') master
-    git push --set-upstream origin master
-}
-
-# git add origin from currently open Safari tab and push to master there
-ggg() {
-    git init
-    git add .
-    git commit -m "Init"
-    git remote add origin $(osascript -e 'tell application "Safari" to return URL of front document')
-    git push $(osascript -e 'tell application "Safari" to return URL of front document') master
-}
-
-# git initialise Learn Anything repository and make first commit
-ggla() {
-    git init
-    license-up mit Learn Anything, learn-anything.xyz
-    git add .
-    git commit -m "Init"
-}
-
-# Initialise repository and add MIT license
-ggi() {
-    git init
-    license-up mit Nikita Voloboev nikitavoloboev.xyz
-    git add .
-    git commit -m "Init"
 }
 
 # git remote add origin of link found in clipboard

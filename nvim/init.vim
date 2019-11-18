@@ -55,6 +55,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'keith/swift.vim' 
 Plug 'lilyball/vim-swift'
 Plug 'jvirtanen/vim-cocoapods'
+
 Plug 'prabirshrestha/async.vim'
 
 " Git
@@ -72,8 +73,11 @@ Plug 'landaire/deoplete-swift'
 Plug 'zchee/deoplete-clang', { 'for': 'c,cpp,objc' }
 
 " Looks
+Plug 'cocopon/iceberg.vim/'
 Plug 'ayu-theme/ayu-vim' " Theme.
 Plug 'itchyny/lightline.vim' " Light and configurable statusline/tabline plugin.
+Plug 'gkeep/iceberg-dark'
+Plug 'edkolev/tmuxline.vim'
 
 " Go
 Plug 'fatih/vim-go', { 'for': 'go' } " Go development.
@@ -175,8 +179,10 @@ let g:incsearch#auto_nohlsearch = 1 " TODO
 
 " Theme
 set background=dark " Set night mode
-let ayucolor="dark"
-colorscheme ayu
+"let ayucolor="dark"
+colorscheme iceberg
+
+let g:lightline = { 'colorscheme': 'icebergDark' }
 
 " Bufferline
 let g:bufferline_echo = 0
