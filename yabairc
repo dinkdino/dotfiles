@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-# bar settings
 yabai -m config status_bar                   off
 yabai -m config status_bar_text_font         "SF Pro Display:Semibold:12.0"
 yabai -m config status_bar_icon_font         "SF Pro Display:Semibold:12.0"
