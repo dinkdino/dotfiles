@@ -54,7 +54,7 @@ Plug 'rust-lang/rust.vim'
 "Swift
 Plug 'keith/swift.vim' 
 Plug 'lilyball/vim-swift'
-Plug 'jvirtanen/vim-cocoapods'
+"Plug 'jvirtanen/vim-cocoapods'
 
 Plug 'prabirshrestha/async.vim'
 
