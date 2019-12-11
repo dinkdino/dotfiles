@@ -5,8 +5,8 @@
 
 - clean: ['~', '~/.config']
 
-- brewfile:
-    file: brew/Brewfile
+  #- brewfile:
+  #file: brew/Brewfile
 
 - shell:
     # Install submodules

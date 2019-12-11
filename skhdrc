@@ -3,6 +3,7 @@
 
 hyper - a : open -a Google\ Chrome
 hyper - x : open -a Xcode
+
 hyper - s : open -a Visual\ Studio\ Code
 hyper - d : open -a Slack
 
@@ -165,4 +166,4 @@ alt - p : yabai -m window --toggle sticky;\
 
 ## change layout of desktop
 ctrl + shift - m : yabai -m space --layout bsp
-#ctrl + shift - n : yabai -m space --layout float
+ctrl + shift - f : yabai -m space --layout float

@@ -368,7 +368,7 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 
 
 # Undo your last commit, but don't throw away your changes
-alias greset='git reset --soft HEAD^'
+alias greset='git reset --soft HEAD~'
 
 # Git Diff
 alias gd='git diff'

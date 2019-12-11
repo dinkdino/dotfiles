@@ -32,3 +32,5 @@ nmap <space>l :xcmenucmd Show Inspectors<CR>
 nmap <space>b :xcmenucmd Build<CR>
 nmap <space>c :%s/^ +$//g<CR> 
 
+noremap <C-a>H :xcmenucmd Go Back<CR>
+noremap <C-a>L :xcmenucmd Go Forward<CR>
