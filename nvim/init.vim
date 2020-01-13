@@ -89,6 +89,10 @@ Plug 'Shougo/neco-vim', { 'for': 'vim' } " Vim source for neocomplete/deoplete.
 "Ruby
 Plug 'vim-ruby/vim-ruby'
 
+"Codi
+Plug 'metakirby5/codi.vim'
+
+
 call plug#end()
 
 " Options
@@ -423,7 +427,7 @@ let g:haskell_indent_case_alternative = 1
 let g:cabal_indent_section = 2
 
 " Automatically reload on save
-au BufWritePost *.hs InteroReload
+"au BufWritePost *.hs InteroReload
 
 " Lookup the type of expression under the cursor
 au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
@@ -490,3 +494,8 @@ nnoremap <silent> <leader>e :call LanguageClient#explainErrorAtPoint()<CR>
 " }}}
 
 runtime! partials/defx.vim
+
+let g:deoplete#sources#jedi#python_path = '~/.pyenv/shims/python'
+
+
+let g:codi#rightsplit=0

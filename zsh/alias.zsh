@@ -271,6 +271,12 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
 
+alias gsw='git switch'
+alias gswc='git switch -c'
+
+alias gwtl='git worktree list'
+alias gwt='git worktree add'
+
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
 alias gcn!='git commit -v --no-edit --amend'
@@ -368,7 +374,8 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 
 
 # Undo your last commit, but don't throw away your changes
-alias greset='git reset --soft HEAD~'
+alias grhm='git reset --mixed HEAD~'
+alias grhs='git reset --soft HEAD~'
 
 # Git Diff
 alias gd='git diff'
