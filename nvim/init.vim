@@ -92,6 +92,8 @@ Plug 'vim-ruby/vim-ruby'
 "Codi
 Plug 'metakirby5/codi.vim'
 
+"Nim
+Plug 'baabelfish/nvim-nim'
 
 call plug#end()
 
@@ -208,6 +210,14 @@ endfunction
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = '<C-]>'
+let g:multi_cursor_select_all_word_key = '<A-]>'
+let g:multi_cursor_start_key           = 'g<C-]>'
+let g:multi_cursor_select_all_key      = 'g<A-]>'
+let g:multi_cursor_next_key            = '<C-]>'
+let g:multi_cursor_prev_key            = '<C-[>'
+let g:multi_cursor_skip_key            = '<C-\>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 let g:AutoPairsFlyMode = 0
 "let g:AutoPairsShortcutToggle = '<C-P>'
@@ -241,7 +251,7 @@ inoremap      ()   ()
 cabbrev rp Rp
 
 " Control mappings
-nnoremap <C-M> /sticky 
+"nnoremap <C-M> /sticky 
 nnoremap <C-L> /\c__\_sKeyCode::/e<Left><Left>
 
 " Space mappings

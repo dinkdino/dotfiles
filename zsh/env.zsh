@@ -35,4 +35,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH="$PATH:$HOME/code/stuff/sourcekit-lsp/.build/debug"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export PATH=/Users/siadev/.nimble/bin:$PATH
 
+export VIFM=$HOME/.vifm

@@ -274,6 +274,9 @@ alias gbd='git branch -d'
 alias gsw='git switch'
 alias gswc='git switch -c'
 
+alias gr='git restore '
+alias gr.='git restore .'
+
 alias gwtl='git worktree list'
 alias gwt='git worktree add'
 
@@ -296,6 +299,7 @@ alias gcd='git checkout develop'
 alias gcmsg='git commit -m'
 alias gco='git checkout'
 alias gcount='git shortlog -sn'
+
 
 alias gcp='git cherry-pick'
 alias gcpa='git cherry-pick --abort'
