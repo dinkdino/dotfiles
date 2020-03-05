@@ -1,7 +1,9 @@
 # open terminal
 #cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
+hyper - f : open -na kitty --args --single-instance --session ~/.dotfiles/kitty/vifm.session
 hyper - a : open -a Google\ Chrome
+hyper - i : open --new -a "Google Chrome" --args --new-window
 hyper - x : open -a Xcode
 
 hyper - s : open -a Visual\ Studio\ Code
@@ -70,6 +72,7 @@ shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 #shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
 shift + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
 shift + cmd - n : yabai -m window --space next; yabai -m space --focus next
+shift + cmd - i : yabai -m window --space recent; yabai -m space --focus recent
 #shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
 #shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 #shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
