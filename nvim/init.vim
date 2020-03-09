@@ -11,7 +11,6 @@ Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair.
 Plug 'w0rp/ale' " Asynchronous Lint Engine.
 Plug 'honza/vim-snippets' " Snippet files for various programming languages.
 Plug 'sbdchd/neoformat' " Format code.
-Plug 'rizzatti/dash.vim' " Search Dash app.
 Plug 'jremmen/vim-ripgrep' " Use RipGrep in Vim and display results in a quickfix list.
 
 Plug 'scrooloose/nerdcommenter' " Quick comments.
@@ -35,14 +34,17 @@ Plug 'neomake/neomake'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'Shougo/defx.nvim'
 
-Plug 'vim-scripts/DrawIt'
+" Looks
+Plug 'cocopon/iceberg.vim/'
+Plug 'ayu-theme/ayu-vim' " Theme.
+Plug 'itchyny/lightline.vim' " Light and configurable statusline/tabline plugin.
+Plug 'gkeep/iceberg-dark'
+Plug 'edkolev/tmuxline.vim'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'morhetz/gruvbox'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neovim/nvim-lsp'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
@@ -50,11 +52,13 @@ Plug 'parsonsmatt/intero-neovim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+let g:rust_recommended_style = 0
+let g:rustfmt_autosave = 1
 
 "Swift
 Plug 'keith/swift.vim' 
 Plug 'lilyball/vim-swift'
-"Plug 'jvirtanen/vim-cocoapods'
+Plug 'landaire/deoplete-swift'
 
 Plug 'prabirshrestha/async.vim'
 
@@ -64,20 +68,15 @@ Plug 'mhinz/vim-signify' " Show a diff using Vim its sign column.
 Plug 'airblade/vim-gitgutter' " Shows git diff in the gutter (sign column) and stages/undoes hunks.
 
 " Deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') } " Asynchronous completion framework.
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-lsp'
 Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
+
+" Typescript
 Plug 'mhartington/nvim-typescript'
-Plug 'landaire/deoplete-swift'
 
 " C
 Plug 'zchee/deoplete-clang', { 'for': 'c,cpp,objc' }
-
-" Looks
-Plug 'cocopon/iceberg.vim/'
-Plug 'ayu-theme/ayu-vim' " Theme.
-Plug 'itchyny/lightline.vim' " Light and configurable statusline/tabline plugin.
-Plug 'gkeep/iceberg-dark'
-Plug 'edkolev/tmuxline.vim'
 
 " Go
 Plug 'fatih/vim-go', { 'for': 'go' } " Go development.
@@ -421,91 +420,23 @@ nmap P <plug>(YoinkPaste_P)
 
 nmap <Leader>fr :tabe %:p:h<CR>
 
-
-" Haskell
-let g:haskell_classic_highlighting = 1
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:haskell_indent_before_where = 2
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-let g:haskell_indent_guard = 2
-let g:haskell_indent_case_alternative = 1
-let g:cabal_indent_section = 2
-
-" Automatically reload on save
-"au BufWritePost *.hs InteroReload
-
-" Lookup the type of expression under the cursor
-au FileType haskell nmap <silent> <leader>t <Plug>InteroGenericType
-au FileType haskell nmap <silent> <leader>T <Plug>InteroType
-" Insert type declaration
-au FileType haskell nnoremap <silent> <leader>ni :InteroTypeInsert<CR>
-" Show info about expression or type under the cursor
-au FileType haskell nnoremap <silent> <leader>i :InteroInfo<CR>
-
-" Open/Close the Intero terminal window
-au FileType haskell nnoremap <silent> <leader>nn :InteroOpen<CR>
-au FileType haskell nnoremap <silent> <leader>nh :InteroHide<CR>
-
-" Reload the current file into REPL
-au FileType haskell nnoremap <silent> <leader>nf :InteroLoadCurrentFile<CR>
-" Jump to the definition of an identifier
-au FileType haskell nnoremap <silent> <leader>ng :InteroGoToDef<CR>
-" Evaluate an expression in REPL
-au FileType haskell nnoremap <silent> <leader>ne :InteroEval<CR>
-
-" Start/Stop Intero
-au FileType haskell nnoremap <silent> <leader>ns :InteroStart<CR>
-au FileType haskell nnoremap <silent> <leader>nk :InteroKill<CR>
-
-" Reboot Intero, for when dependencies are added
-au FileType haskell nnoremap <silent> <leader>nr :InteroKill<CR> :InteroOpen<CR>
-
-" Managing targets
-" Prompts you to enter targets (no silent):
-au FileType haskell nnoremap <leader>nt :InteroSetTargets<CR><Paste>
-
-" SourceKit-LSP configuration
-if executable('sourcekit-lsp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'sourcekit-lsp',
-        \ 'cmd': {server_info->['sourcekit-lsp']},
-        \ 'whitelist': ['swift'],
-        \ })
-endif
-
-autocmd FileType swift setlocal omnifunc=lsp#complete
-
-" Rust
-" -------- RLS configuration {{{
-" See https://github.com/autozimu/LanguageClient-neovim
-"
-" \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
-
-" Don't show inline errors. See:
-" https://github.com/autozimu/LanguageClient-neovim/issues/719
-let g:LanguageClient_useVirtualText=0
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> <leader>c :call LanguageClient#textDocument_codeAction()<CR>
-nnoremap <silent> <leader>e :call LanguageClient#explainErrorAtPoint()<CR>
-" }}}
-
 runtime! partials/defx.vim
 
 let g:deoplete#sources#jedi#python_path = '~/.pyenv/shims/python'
-
+call deoplete#custom#source('_', 'max_menu_width', 80)
 
 let g:codi#rightsplit=0
+
+autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+nnoremap <leader>cl :!cargo clippy
+
+lua require'nvim_lsp'.rust_analyzer.setup{}
+
+" Example config
+autocmd Filetype rust,python,go,c,cpp setl omnifunc=v:lua.vim.lsp.omnifunc
+nnoremap <silent> ;dc <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> ;df <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> ;h  <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> ;i  <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> ;s  <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> ;td <cmd>lua vim.lsp.buf.type_definition()<CR>

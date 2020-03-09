@@ -7,7 +7,8 @@ hyper - i : open --new -a "Google Chrome" --args --new-window
 hyper - x : open -a Xcode
 
 hyper - s : open -a Visual\ Studio\ Code
-hyper - d : open -a Slack
+hyper - t : open -a Slack
+hyper - d : open -a "Webex Teams"
 
 # focus window
 ctrl + shift - h : yabai -m window --focus west
@@ -55,8 +56,8 @@ shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 ## fast focus desktop
 #cmd + alt - x : yabai -m space --focus recent
-#ctrl + shift - p : yabai -m space --focus prev
-#ctrl + shift - n : yabai -m space --focus next
+ctrl + shift - p : yabai -m space --focus prev
+ctrl + shift - n : yabai -m space --focus next
 #cmd + alt - 1 : yabai -m space --focus 1
 #cmd + alt - 2 : yabai -m space --focus 2
 #cmd + alt - 3 : yabai -m space --focus 3

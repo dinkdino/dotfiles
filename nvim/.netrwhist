@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/siadev/workspace/msl-starling-ios/SIAMobile'
-let g:netrw_dirhist_2='/Users/siadev/workspace/localize/ref'
-let g:netrw_dirhist_3='/Users/siadev/workspace/localize'
-let g:netrw_dirhist_4='/Users/rush/.dotfiles/nvim'
-let g:netrw_dirhist_5='/Users/rush/workspace/rust/play_ground/src'
-let g:netrw_dirhist_6='/Users/rush/workspace/rust/play_ground'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/siadev/.dotfiles/nvim'
