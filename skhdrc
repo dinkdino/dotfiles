@@ -41,21 +41,21 @@ shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 ## create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-#shift + cmd - n : yabai -m space --create && \
-                  #index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                  #yabai -m window --space "${index}" && \
-                  #yabai -m space --focus "${index}"
+ctrl + shift - o : yabai -m space --create && \
+                  index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                  yabai -m window --space "${index}" && \
+                  yabai -m space --focus "${index}"
 
 ## create desktop and follow focus - uses jq for parsing json (brew install jq)
-#cmd + alt - n : yabai -m space --create && \
-                #index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                #yabai -m space --focus "${index}"
+shift + alt - o : yabai -m space --create && \
+                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                yabai -m space --focus "${index}"
 
 ## destroy desktop
-#cmd + alt - w : yabai -m space --destroy
+ctrl + shift - u : yabai -m space --destroy
 
 ## fast focus desktop
-#cmd + alt - x : yabai -m space --focus recent
+ctrl + shift - i : yabai -m space --focus recent
 ctrl + shift - p : yabai -m space --focus prev
 ctrl + shift - n : yabai -m space --focus next
 #cmd + alt - 1 : yabai -m space --focus 1
@@ -73,7 +73,7 @@ ctrl + shift - n : yabai -m space --focus next
 #shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
 shift + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
 shift + cmd - n : yabai -m window --space next; yabai -m space --focus next
-shift + cmd - i : yabai -m window --space recent; yabai -m space --focus recent
+#shift + cmd - i : yabai -m window --space recent; yabai -m space --focus recent
 #shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
 #shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 #shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
