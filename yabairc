@@ -43,6 +43,7 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
+yabai -m rule --add app="^Emacs$" sticky=off topmost=on
 
 yabai -m signal --add event=space_changed \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
@@ -54,4 +55,4 @@ yabai -m signal --add event=window_focused \
 yabai -m signal --add event=window_focused \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 
-YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &
+#YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" &

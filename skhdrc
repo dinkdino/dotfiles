@@ -1,32 +1,33 @@
 # open terminal
 #cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
-hyper - f : open -na kitty --args --single-instance --session ~/.dotfiles/kitty/vifm.session
 hyper - a : open -a Google\ Chrome
 hyper - i : open --new -a "Google Chrome" --args --new-window
 hyper - x : open -a Xcode
 
 hyper - s : open -a Visual\ Studio\ Code
-hyper - t : open -a Slack
-hyper - d : open -a "Webex Teams"
+hyper - d : open -a "Microsoft Teams"
+hyper - l : open -a "emacs"
+
+ctrl + shift - c : yabai -m window --close
 
 # focus window
-ctrl + shift - h : yabai -m window --focus west
-ctrl + shift - j : yabai -m window --focus south
-ctrl + shift - k : yabai -m window --focus north
-ctrl + shift - l : yabai -m window --focus east
+ctrl - h : yabai -m window --focus west
+ctrl - j : yabai -m window --focus south
+ctrl - k : yabai -m window --focus north
+ctrl - l : yabai -m window --focus east
 
 # swap window
-shift + alt - h : yabai -m window --swap west
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - l : yabai -m window --swap east
+alt - h : yabai -m window --swap west
+alt - j : yabai -m window --swap south
+alt - k : yabai -m window --swap north
+alt - l : yabai -m window --swap east
 
 ## move window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+#shift + cmd - h : yabai -m window --warp west
+#shift + cmd - j : yabai -m window --warp south
+#shift + cmd - k : yabai -m window --warp north
+#shift + cmd - l : yabai -m window --warp east
 
 ## balance size of windows
 ctrl + shift - 0 : yabai -m space --balance
@@ -58,32 +59,35 @@ ctrl + shift - u : yabai -m space --destroy
 ctrl + shift - i : yabai -m space --focus recent
 ctrl + shift - p : yabai -m space --focus prev
 ctrl + shift - n : yabai -m space --focus next
-#cmd + alt - 1 : yabai -m space --focus 1
-#cmd + alt - 2 : yabai -m space --focus 2
-#cmd + alt - 3 : yabai -m space --focus 3
-#cmd + alt - 4 : yabai -m space --focus 4
-#cmd + alt - 5 : yabai -m space --focus 5
-#cmd + alt - 6 : yabai -m space --focus 6
-#cmd + alt - 7 : yabai -m space --focus 7
-#cmd + alt - 8 : yabai -m space --focus 8
-#cmd + alt - 9 : yabai -m space --focus 9
+ctrl - 1 : yabai -m space --focus 1
+ctrl - 2 : yabai -m space --focus 2
+ctrl - 3 : yabai -m space --focus 3
+ctrl + shift - 1 : yabai -m space --focus 4
+ctrl + shift - 2 : yabai -m space --focus 5
+ctrl + shift - 3 : yabai -m space --focus 6
+ctrl - 4 : yabai -m space --focus 4
+ctrl - 5 : yabai -m space --focus 5
+ctrl - 6 : yabai -m space --focus 6
+ctrl - 7 : yabai -m space --focus 7
+ctrl - 8 : yabai -m space --focus 8
+ctrl - 9 : yabai -m space --focus 9
 #cmd + alt - 0 : yabai -m space --focus 10
 
 ## send window to desktop and follow focus
 #shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
-shift + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
-shift + cmd - n : yabai -m window --space next; yabai -m space --focus next
-#shift + cmd - i : yabai -m window --space recent; yabai -m space --focus recent
-#shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
-#shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
-#shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
-#shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
-#shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
-#shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
-#shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
-#shift + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
-#shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
-#shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+#shift + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
+#shift + cmd - n : yabai -m window --space next; yabai -m space --focus next
+#ctrl + shift - i : yabai -m window --space recent; yabai -m space --focus recent
+ctrl + shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
+ctrl + shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
+ctrl + shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
+ctrl + shift - 4 : yabai -m window --space  4; yabai -m space --focus 4
+ctrl + shift - 5 : yabai -m window --space  5; yabai -m space --focus 5
+ctrl + shift - 6 : yabai -m window --space  6; yabai -m space --focus 6
+ctrl + shift - 7 : yabai -m window --space  7; yabai -m space --focus 7
+ctrl + shift - 8 : yabai -m window --space  8; yabai -m space --focus 8
+ctrl + shift - 9 : yabai -m window --space  9; yabai -m space --focus 9
+ctrl + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 ## focus monitor
 #ctrl + alt - x  : yabai -m display --focus recent
@@ -146,7 +150,7 @@ alt - x : yabai -m space --mirror x-axis
 ctrl + shift - z : yabai -m window --toggle zoom-parent
 
 ## toggle window fullscreen zoom
-ctrl + shift - x : yabai -m window --toggle zoom-fullscreen
+ctrl - space : yabai -m window --toggle zoom-fullscreen
 
 ## toggle window native fullscreen
 #shift + alt - f : yabai -m window --toggle native-fullscreen
@@ -171,3 +175,7 @@ alt - p : yabai -m window --toggle sticky;\
 ## change layout of desktop
 ctrl + shift - m : yabai -m space --layout bsp
 ctrl + shift - f : yabai -m space --layout float
+
+#hyper - l : s="$(yabai -m query --windows | jq 'map(select(."app" == "Emacs"))[-1].index')" && \
+#            yabai -m window --toggle sticky && \
+#            yabai -m window --toggle

@@ -266,15 +266,26 @@ finder() {
 EOF
 }
 
+xop(){
+    if test -n "$(find . -maxdepth 3 -name '*.xcodeproj' -print -quit)"
+    then
+        echo "Opening project"
+        open $(find . -maxdepth 3 -name '*.xcodeproj' -print -quit) 
+        return
+    else
+        echo "Nothing found"
+    fi
+}
+
 # xo <xcode-proj> - Open Xcode project.
-xo(){
-  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+xow(){
+  if test -n "$(find . -maxdepth 3 -name '*.xcworkspace' -print -quit)"
   then
     echo "Opening workspace"
     open *.xcworkspace
     return
   else
-    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+    if test -n "$(find . -maxdepth 3 -name '*.xcodeproj' -print -quit)"
     then
       echo "Opening project"
       open *.xcodeproj

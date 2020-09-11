@@ -7,3 +7,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[core]
+	excludesfile = /Users/siadev/.gitignore_global
+[commit]
+	template = /Users/siadev/.stCommitMsg
+[status]
+	submoduleSummary = true

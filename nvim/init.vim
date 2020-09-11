@@ -44,7 +44,7 @@ Plug 'liuchengxu/space-vim-theme'
 Plug 'morhetz/gruvbox'
 
 Plug 'neovim/nvim-lsp'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
@@ -58,7 +58,7 @@ let g:rustfmt_autosave = 1
 "Swift
 Plug 'keith/swift.vim' 
 Plug 'lilyball/vim-swift'
-Plug 'landaire/deoplete-swift'
+"Plug 'landaire/deoplete-swift'
 
 Plug 'prabirshrestha/async.vim'
 
@@ -70,7 +70,7 @@ Plug 'airblade/vim-gitgutter' " Shows git diff in the gutter (sign column) and s
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete-lsp'
-Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
+"Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
 
 " Typescript
 Plug 'mhartington/nvim-typescript'
@@ -80,7 +80,7 @@ Plug 'zchee/deoplete-clang', { 'for': 'c,cpp,objc' }
 
 " Go
 Plug 'fatih/vim-go', { 'for': 'go' } " Go development.
-Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'} " Asynchronous Go completion.
+"Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'} " Asynchronous Go completion.
 
 " Vim
 Plug 'Shougo/neco-vim', { 'for': 'vim' } " Vim source for neocomplete/deoplete.
@@ -376,7 +376,6 @@ if has('conceal')
 endif
 
 " Auto commands
-au FileType dirvish call fugitive#detect(@%)
 au FocusLost * :wa " Auto save everything
 
 " Remaps
@@ -422,21 +421,21 @@ nmap <Leader>fr :tabe %:p:h<CR>
 
 runtime! partials/defx.vim
 
-let g:deoplete#sources#jedi#python_path = '~/.pyenv/shims/python'
-call deoplete#custom#source('_', 'max_menu_width', 80)
+"let g:deoplete#sources#jedi#python_path = '~/.pyenv/shims/python'
+"call deoplete#custom#source('_', 'max_menu_width', 80)
 
-let g:codi#rightsplit=0
+"let g:codi#rightsplit=0
 
-autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
-nnoremap <leader>cl :!cargo clippy
+"autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+"nnoremap <leader>cl :!cargo clippy
 
-lua require'nvim_lsp'.rust_analyzer.setup{}
+"lua require'nvim_lsp'.rust_analyzer.setup{}
 
 " Example config
-autocmd Filetype rust,python,go,c,cpp setl omnifunc=v:lua.vim.lsp.omnifunc
-nnoremap <silent> ;dc <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> ;df <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> ;h  <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> ;i  <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> ;s  <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> ;td <cmd>lua vim.lsp.buf.type_definition()<CR>
+"autocmd Filetype rust,python,go,c,cpp setl omnifunc=v:lua.vim.lsp.omnifunc
+"nnoremap <silent> ;dc <cmd>lua vim.lsp.buf.declaration()<CR>
+"nnoremap <silent> ;df <cmd>lua vim.lsp.buf.definition()<CR>
+"nnoremap <silent> ;h  <cmd>lua vim.lsp.buf.hover()<CR>
+"nnoremap <silent> ;i  <cmd>lua vim.lsp.buf.implementation()<CR>
+"nnoremap <silent> ;s  <cmd>lua vim.lsp.buf.signature_help()<CR>
+"nnoremap <silent> ;td <cmd>lua vim.lsp.buf.type_definition()<CR>

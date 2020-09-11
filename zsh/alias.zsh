@@ -163,8 +163,8 @@ alias rrpdf='rm -rf *.pdf'
 alias sz='exec zsh'
 
 # ls
-alias l='colorls -lA --sd --gs'
-alias ls='colorls'
+#alias l='colorls -lA --sd --gs'
+alias l='ls -lah'
 alias la="ls -aF"
 alias ld="ls -ld"
 alias lso='ls -At1 && echo "------Oldest--"'
@@ -405,3 +405,8 @@ alias gdcn!='git duet-commit --amend --no-edit'
 alias gapa='git add --patch'
 alias grbi='git rebase -i `fcs`'
 alias grv='grv'
+
+alias ls='exa --color=always'
+alias l='exa -al --git --color=always'
+alias tree='exa -Tl --color=always'
+

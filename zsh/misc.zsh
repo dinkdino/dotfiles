@@ -5,7 +5,6 @@ eval "$(rbenv init -)"
 # Init pyenv
 eval "$(pyenv init -)"
 
-source $(dirname $(gem which colorls))/tab_complete.sh
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -55,3 +54,11 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 
+
+jdk() {
+    version=$1
+    export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    java -version
+}
+
+export JAVA_HOME=$(/usr/libexec/java_home -v"14");
