@@ -1,21 +1,22 @@
 # open terminal
 #cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
-hyper - a : open -a Google\ Chrome
-hyper - i : open --new -a "Google Chrome" --args --new-window
-hyper - x : open -a Xcode
+#hyper - a : open -a Google\ Chrome
+#hyper - i : open --new -a "Google Chrome" --args --new-window
+#hyper - x : open -a Xcode
+#hyper - n : open -a "Notes"
 
-hyper - s : open -a Visual\ Studio\ Code
-hyper - d : open -a "Microsoft Teams"
-hyper - l : open -a "emacs"
+#hyper - s : open -a Visual\ Studio\ Code
+#hyper - d : open -a "Microsoft Teams"
+#hyper - l : open -a "emacs"
 
 ctrl + shift - c : yabai -m window --close
 
 # focus window
-ctrl - h : yabai -m window --focus west
-ctrl - j : yabai -m window --focus south
-ctrl - k : yabai -m window --focus north
-ctrl - l : yabai -m window --focus east
+hyper - h : yabai -m window --focus west
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - l : yabai -m window --focus east
 
 # swap window
 alt - h : yabai -m window --swap west
@@ -30,7 +31,7 @@ alt - l : yabai -m window --swap east
 #shift + cmd - l : yabai -m window --warp east
 
 ## balance size of windows
-ctrl + shift - 0 : yabai -m space --balance
+hyper - 0 : yabai -m space --balance
 
 ## make floating window fill screen
 shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
@@ -56,18 +57,15 @@ shift + alt - o : yabai -m space --create && \
 ctrl + shift - u : yabai -m space --destroy
 
 ## fast focus desktop
-ctrl + shift - i : yabai -m space --focus recent
-ctrl + shift - p : yabai -m space --focus prev
-ctrl + shift - n : yabai -m space --focus next
-ctrl - 1 : yabai -m space --focus 1
-ctrl - 2 : yabai -m space --focus 2
-ctrl - 3 : yabai -m space --focus 3
-ctrl + shift - 1 : yabai -m space --focus 4
-ctrl + shift - 2 : yabai -m space --focus 5
-ctrl + shift - 3 : yabai -m space --focus 6
-ctrl - 4 : yabai -m space --focus 4
-ctrl - 5 : yabai -m space --focus 5
-ctrl - 6 : yabai -m space --focus 6
+hyper - i : yabai -m space --focus recent
+hyper - p : yabai -m space --focus prev
+hyper - n : yabai -m space --focus next
+hyper - 1 : yabai -m space --focus 1
+hyper - 2 : yabai -m space --focus 2
+hyper - 3 : yabai -m space --focus 3
+hyper - 4 : yabai -m space --focus 4
+hyper - 5 : yabai -m space --focus 5
+hyper - 6 : yabai -m space --focus 6
 ctrl - 7 : yabai -m space --focus 7
 ctrl - 8 : yabai -m space --focus 8
 ctrl - 9 : yabai -m space --focus 9
@@ -169,7 +167,7 @@ alt - e : yabai -m window --toggle split
 #alt - s : yabai -m window --toggle sticky
 
 ## toggle sticky, float and resize to picture-in-picture size
-alt - p : yabai -m window --toggle sticky;\
+hyper - u : yabai -m window --toggle sticky;\
           yabai -m window --grid 10:10:1:0:6:3
 
 ## change layout of desktop
